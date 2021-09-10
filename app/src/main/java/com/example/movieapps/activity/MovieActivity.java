@@ -37,10 +37,11 @@ public class MovieActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MovieActivity.this));
 
         movielist = new ArrayList<>();
-        adapter = new MovieAdapter(movielist, this);
-        recyclerView.setAdapter(adapter);
 
         getData();
+
+        adapter = new MovieAdapter(movielist, this);
+        recyclerView.setAdapter(adapter);
     }
 
     private void getData() {
@@ -51,7 +52,7 @@ public class MovieActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray result = response.getJSONArray("results");
-                            for (int i = 0; i < 20; i++) {
+                            for (int i = 0; i < result.length(); i++) {
                                 JSONObject resultObj = result.getJSONObject(i);
 
                                 String original_title = resultObj.getString("original_title");

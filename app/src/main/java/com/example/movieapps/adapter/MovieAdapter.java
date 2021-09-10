@@ -21,13 +21,14 @@ import com.example.movieapps.activity.MovieDetailActivity;
 import com.example.movieapps.model.MovieModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
-    public ArrayList<MovieModel> movieModels;
+    public List<MovieModel> movieModels;
     Context context;
 
-    public MovieAdapter(ArrayList<MovieModel> movieModels, Context context) {
+    public MovieAdapter(List<MovieModel> movieModels, Context context) {
         this.movieModels = movieModels;
         this.context = context;
     }

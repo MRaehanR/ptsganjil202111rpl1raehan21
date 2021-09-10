@@ -1,11 +1,20 @@
 package com.example.movieapps.model;
 
-public class MovieModel {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class MovieModel extends RealmObject {
+
+    @PrimaryKey
     private int id;
     private String original_title;
     private String overview;
     private String release_date;
     private String poster_path;
+
+    public  MovieModel() {
+        
+    }
 
     public MovieModel(int id, String original_title, String overview, String release_date, String poster_path) {
         this.id = id;
