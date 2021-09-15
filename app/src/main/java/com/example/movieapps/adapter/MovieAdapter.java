@@ -67,7 +67,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         return (movieModels != null) ? movieModels.size() : 0;
     }
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
+    public class MovieViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvOriginalTitle, tvRealeseDate;
         CardView cvMovie;
@@ -81,28 +81,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             cvMovie = itemView.findViewById(R.id.cv_movie);
             ivPoster = itemView.findViewById(R.id.iv_poster);
 
-            cvMovie.setOnCreateContextMenuListener(this);
-        }
-
-        @Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.add(R.menu.context_menu, R.id.option1, 1, "Edit").setOnMenuItemClickListener(this);
-            menu.add(R.menu.context_menu, R.id.option2, 2, "Delete").setOnMenuItemClickListener(this);
-        }
-
-        @Override
-        public boolean onMenuItemClick(MenuItem item) {
-
-            switch (item.getItemId()){
-                case R.id.option1:
-                    Toast.makeText(context, "Edit", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.option2:
-                    Toast.makeText(context, "Delete", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-
-            return false;
         }
     }
 }

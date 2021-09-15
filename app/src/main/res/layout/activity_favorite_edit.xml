@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FavoriteDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/iv_poster"
+            android:layout_width="200dp"
+            android:layout_height="400dp"
+            android:src="@drawable/poster_default"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_originalTitle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Original Title"
+            app:errorEnabled="true"
+            android:layout_gravity="center">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_overview"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Overview"
+            app:errorEnabled="true"
+            android:layout_gravity="center">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_releaseDate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Release Date"
+            app:errorEnabled="true"
+            android:layout_gravity="center">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_below="@id/tf_releaseDate"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

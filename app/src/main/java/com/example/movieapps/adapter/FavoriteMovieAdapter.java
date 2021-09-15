@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapps.R;
+import com.example.movieapps.activity.FavoriteDetailActivity;
+import com.example.movieapps.activity.FavoriteMovieActivity;
 import com.example.movieapps.activity.MovieDetailActivity;
 import com.example.movieapps.helper.RealmHelper;
 import com.example.movieapps.model.MovieModel;
@@ -62,7 +64,7 @@ public class FavoriteMovieAdapter extends RecyclerView.Adapter<FavoriteMovieAdap
         holder.cvMovie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MovieDetailActivity.class);
+                Intent intent = new Intent(context, FavoriteDetailActivity.class);
                 intent.putExtra("id", movieModelList.get(position).getId());
                 intent.putExtra("original_title", movieModelList.get(position).getOriginal_title());
                 intent.putExtra("overview", movieModelList.get(position).getOverview());
@@ -71,7 +73,7 @@ public class FavoriteMovieAdapter extends RecyclerView.Adapter<FavoriteMovieAdap
                 context.startActivity(intent);
             }
         });
-        holder.positionItem = position + 1;
+        holder.positionItem = movieModelList.get(position).getId();
     }
 
     @Override
@@ -81,7 +83,7 @@ public class FavoriteMovieAdapter extends RecyclerView.Adapter<FavoriteMovieAdap
 
     public class FavoriteMovieViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener{
 
-        public int positionItem;
+        int positionItem;
         TextView tvOriginalTitle, tvRealeseDate;
         CardView cvMovie;
         ImageView ivPoster;

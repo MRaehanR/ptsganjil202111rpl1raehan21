@@ -8,7 +8,7 @@ import android.os.Handler;
 
 import com.example.movieapps.R;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //This method will be executed once the timer is over
-                // Start your app main activity
-                startActivity(new Intent(SplashScreen.this, DashBoardActivity.class));
-                // close this activity
+                startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
                 finish();
             }
         }, 3000);

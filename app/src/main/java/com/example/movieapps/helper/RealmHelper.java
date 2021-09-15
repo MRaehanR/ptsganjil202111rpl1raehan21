@@ -26,11 +26,14 @@ public class RealmHelper {
                     int nextId;
                     if (currentIdNum == null) {
                         nextId = 1;
+                        Log.d("nextId if: ", String.valueOf(nextId));
                     } else {
                         nextId = currentIdNum.intValue() + 1;
+                        Log.d("nextId Else: ", String.valueOf(nextId));
                     }
                     movieModel.setId(nextId);
                     MovieModel model = realm.copyToRealm(movieModel);
+                    Log.d("currentNum: ", String.valueOf(currentIdNum));
                 } else {
                     Log.e("Failed", "execute: Database not Exist");
                 }
@@ -58,35 +61,7 @@ public class RealmHelper {
         });
     }
 
-    // Error tidak bisa delete 
     public void delete(Integer id){
-//        final RealmResults<MovieModel> model = realm.where(MovieModel.class)
-//                .equalTo("id", id)
-//                .findAllAsync();
-//        MovieModel model = realm.where(MovieModel.class).equalTo("id", id).findFirst();
-//        realm.executeTransactionAsync(new Realm.Transaction() {
-//            @Override
-//            public void execute(Realm realm) {
-//                final RealmResults<MovieModel> model = realm.where(MovieModel.class)
-//                        .equalTo("id", id)
-//                        .findAllAsync();
-//                model.deleteAllFromRealm();
-//            }
-//        }, new Realm.Transaction.OnSuccess() {
-//            @Override
-//            public void onSuccess() {
-//                Log.d("Success", "Sucsess");
-//            }
-//        }, new Realm.Transaction.OnError() {
-//            @Override
-//            public void onError(Throwable error) {
-//                error.printStackTrace();
-//                Log.d("error", "error ngab");
-//                Log.d("idnya", String.valueOf(id));
-////                Log.d("Modelnya", String.valueOf(model));
-//            }
-//        });
-
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
