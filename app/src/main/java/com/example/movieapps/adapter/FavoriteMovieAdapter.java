@@ -2,7 +2,6 @@ package com.example.movieapps.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,8 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.movieapps.R;
 import com.example.movieapps.activity.FavoriteDetailActivity;
-import com.example.movieapps.activity.FavoriteMovieActivity;
-import com.example.movieapps.activity.MovieDetailActivity;
 import com.example.movieapps.helper.RealmHelper;
 import com.example.movieapps.model.MovieModel;
 

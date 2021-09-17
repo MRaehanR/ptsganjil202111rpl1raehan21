@@ -16,7 +16,6 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.movieapps.R;
-import com.example.movieapps.activity.MovieActivity;
 import com.example.movieapps.adapter.MovieAdapter;
 import com.example.movieapps.model.MovieModel;
 

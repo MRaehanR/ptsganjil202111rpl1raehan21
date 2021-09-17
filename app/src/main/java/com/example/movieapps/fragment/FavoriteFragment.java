@@ -2,7 +2,6 @@ package com.example.movieapps.fragment;
 
 import android.os.Bundle;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.movieapps.R;
-import com.example.movieapps.activity.FavoriteMovieActivity;
 import com.example.movieapps.adapter.FavoriteMovieAdapter;
 import com.example.movieapps.helper.RealmHelper;
 import com.example.movieapps.model.MovieModel;
