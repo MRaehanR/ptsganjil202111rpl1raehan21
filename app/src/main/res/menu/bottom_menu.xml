@@ -1,12 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
-        android:enabled="true"
+        android:id="@+id/menu_movieList"
         android:icon="@drawable/ic_baseline_edit_24"
-        android:title="List"/>
+        android:title="Movies"/>
     <item
-        android:id="@+id/page_2"
-        android:enabled="true"
+        android:id="@+id/menu_favorite"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="Favorite"/>
 </menu>

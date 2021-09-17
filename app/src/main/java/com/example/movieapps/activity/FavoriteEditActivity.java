@@ -68,7 +68,9 @@ public class FavoriteEditActivity extends AppCompatActivity {
             overview = tf_overview.getText().toString();
             realmHelper.update(id, originalTitle, overview, releaseDate);
             Toast.makeText(getApplicationContext(), "Update Successful", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(), FavoriteMovieActivity.class));
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            intent.putExtra("isFromFavorite", true);
+            startActivity(intent);
             finish();
         });
     }

@@ -70,6 +70,8 @@ public class FavoriteDetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(FavoriteDetailActivity.this, FavoriteMovieActivity.class));
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        intent.putExtra("isFromFavorite", true);
+        startActivity(intent);
     }
 }

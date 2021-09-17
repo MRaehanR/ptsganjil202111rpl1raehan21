@@ -95,6 +95,6 @@ public class MovieDetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(MovieDetailActivity.this, MovieActivity.class));
+        startActivity(new Intent(MovieDetailActivity.this, HomeActivity.class));
     }
 }
