@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".activity.RegisterActivity">
 
     <RelativeLayout
@@ -13,28 +14,39 @@
         android:layout_height="wrap_content">
     </RelativeLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/centerline"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="-118dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginBottom="-200dp"
         android:gravity="center"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="231dp"
+            android:layout_height="220dp"
+            android:src="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:text="REGISTER"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="SIGN UP"
+            android:textColor="@color/gold"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:orientation="vertical">
 
@@ -42,13 +54,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="Email">
+                android:hint="Email"
+                app:boxBackgroundColor="@color/blue_light"
+                android:textColorHint="@color/gold"
+                app:boxStrokeColor="@color/gold"
+                app:hintTextColor="@color/gold"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tf_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/gold"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,13 +74,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                app:endIconMode="password_toggle">
+                app:endIconMode="password_toggle"
+                app:boxBackgroundColor="@color/blue_light"
+                android:textColorHint="@color/gold"
+                app:endIconTint="@color/gold"
+                app:boxStrokeColor="@color/gold"
+                app:hintTextColor="@color/gold">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tf_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textColor="@color/gold"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,11 +97,13 @@
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="Submit" />
-
+            android:text="Submit"
+            android:backgroundTint="@color/gold"
+            android:textStyle="bold"
+            android:textColor="@color/blue_light"/>
 
     </LinearLayout>
 

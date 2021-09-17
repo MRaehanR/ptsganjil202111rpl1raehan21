@@ -46,18 +46,14 @@ public class RealmHelper {
         return results;
     }
 
-    public void update(final Integer id, final String original_title, final String overview, final String release_date, final String poster_path){
-        realm.executeTransactionAsync(realm1 -> {
+    public void update(final Integer id, final String original_title, final String overview, final String release_date){
+        realm.executeTransaction(realm1 -> {
             MovieModel movieModel = realm.where(MovieModel.class)
                     .equalTo("id", id)
                     .findFirst();
             movieModel.setOriginal_title(original_title);
             movieModel.setOverview(overview);
             movieModel.setRelease_date(release_date);
-        }, () -> {
-            Log.e("Success", "onSuccess: Update Successfully");
-        }, error -> {
-            error.printStackTrace();
         });
     }
 
@@ -66,6 +62,18 @@ public class RealmHelper {
             @Override
             public void execute(Realm realm) {
                 final RealmResults<MovieModel> model = realm.where(MovieModel.class).equalTo("id", id).findAll();
+                Log.d("Model dari Delete", String.valueOf(model));
+                model.deleteFirstFromRealm();
+            }
+        });
+    }
+
+    public void delete(String originalTitle){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                final RealmResults<MovieModel> model = realm.where(MovieModel.class).equalTo("original_title", originalTitle).findAll();
+                Log.d("Model dari Delete", String.valueOf(model));
                 model.deleteFirstFromRealm();
             }
         });

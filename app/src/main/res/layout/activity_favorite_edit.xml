@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.FavoriteDetailActivity">
+    tools:context=".activity.FavoriteEditActivity"
+    android:background="@color/blue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,58 +20,73 @@
             android:src="@drawable/poster_default"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_originalTitle"
-            android:layout_width="300dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:hint="Original Title"
-            app:errorEnabled="true"
+            app:boxBackgroundColor="@color/blue_light"
+            android:textColorHint="@color/gold"
+            app:boxStrokeColor="@color/gold"
+            app:hintTextColor="@color/gold"
             android:layout_gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tf_originalTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:inputType="textShortMessage"
+                android:textColor="@color/white"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_overview"
-            android:layout_width="300dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="Overview"
-            app:errorEnabled="true"
-            android:layout_gravity="center">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tf_releaseDate"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:hint="Release Date"
-            app:errorEnabled="true"
+            app:boxBackgroundColor="@color/blue_light"
+            android:textColorHint="@color/gold"
+            app:boxStrokeColor="@color/gold"
+            app:hintTextColor="@color/gold"
             android:layout_gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tf_releaseDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:inputType="date"
+                android:textColor="@color/white"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Overview"
+            app:boxBackgroundColor="@color/blue_light"
+            android:textColorHint="@color/gold"
+            app:boxStrokeColor="@color/gold"
+            app:hintTextColor="@color/gold"
+            android:layout_gravity="center">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tf_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Save"
-            android:layout_below="@id/tf_releaseDate"
             android:layout_gravity="center"
             android:layout_marginBottom="50dp"
+            android:layout_marginTop="15dp"
             />
 
     </LinearLayout>

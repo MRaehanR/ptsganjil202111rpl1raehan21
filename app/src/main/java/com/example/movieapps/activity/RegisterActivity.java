@@ -27,6 +27,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        getSupportActionBar().hide();
+
         mAuth = FirebaseAuth.getInstance();
 
         et_email = findViewById(R.id.tf_email);
@@ -50,13 +52,13 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(getApplicationContext(), "Register Successful", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Sign Up Success", Toast.LENGTH_SHORT).show();
                                         clearText();
                                         finish();
                                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Sign Up Failed.", Toast.LENGTH_SHORT).show();
                                         clearText();
                                     }
                                 }

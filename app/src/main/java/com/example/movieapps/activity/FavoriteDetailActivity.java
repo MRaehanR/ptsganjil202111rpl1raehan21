@@ -23,7 +23,7 @@ public class FavoriteDetailActivity extends AppCompatActivity {
     ImageView ivPoster;
     TextView tvOriginalTitle, tvOverview, tvReleaseDate;
     int id;
-    String poster_path, originalTitle, overview, releaseDate;
+    String posterPath, originalTitle, overview, releaseDate;
     FloatingActionButton fab_edit;
     Bundle bundle;
 
@@ -44,7 +44,7 @@ public class FavoriteDetailActivity extends AppCompatActivity {
             originalTitle = bundle.getString("original_title");
             overview = bundle.getString("overview");
             releaseDate = bundle.getString("release_date");
-            poster_path = bundle.getString("poster_path");
+            posterPath = bundle.getString("poster_path");
             id = bundle.getInt("id");
             getSupportActionBar().setTitle(originalTitle);
         }
@@ -53,7 +53,7 @@ public class FavoriteDetailActivity extends AppCompatActivity {
         tvReleaseDate.setText(releaseDate);
         tvOverview.setText(overview);
         Glide.with(getApplicationContext())
-                .load("https://image.tmdb.org/t/p/w500/".concat(poster_path))
+                .load("https://image.tmdb.org/t/p/w500/".concat(posterPath))
                 .into(ivPoster);
 
         fab_edit.setOnClickListener(v -> {
@@ -61,7 +61,15 @@ public class FavoriteDetailActivity extends AppCompatActivity {
             intent.putExtra("original_title", originalTitle);
             intent.putExtra("overview", overview);
             intent.putExtra("release_date", releaseDate);
+            intent.putExtra("poster_path", posterPath);
+            intent.putExtra("id", id);
             startActivity(intent);
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(FavoriteDetailActivity.this, FavoriteMovieActivity.class));
     }
 }

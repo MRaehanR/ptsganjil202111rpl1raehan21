@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:backgroundTint="@color/blue_light">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="original_title"
                 android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/gold"
                 />
             <TextView
                 android:id="@+id/tv_realese_date"
@@ -41,7 +43,7 @@
                 android:layout_marginTop="8dp"
                 android:text="realese_date"
                 android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/gold"
                 />
 
         </LinearLayout>

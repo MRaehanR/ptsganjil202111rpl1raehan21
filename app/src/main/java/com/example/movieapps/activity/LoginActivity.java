@@ -27,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getSupportActionBar().hide();
+
         mAuth = FirebaseAuth.getInstance();
 
         et_email = findViewById(R.id.tf_email);
@@ -49,13 +51,13 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Sign In Success", Toast.LENGTH_SHORT).show();
                                         clearText();
                                         finish();
                                         startActivity(new Intent(getApplicationContext(), DashBoardActivity.class));
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Authentication Failed", Toast.LENGTH_SHORT).show();
                                         clearText();
                                     }
 

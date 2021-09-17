@@ -29,10 +29,20 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v == btn_movieList){
-            Toast.makeText(getApplicationContext(), "HALO BANG", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), MovieActivity.class));
+            finish();
         }else if(v == btn_favorite){
             startActivity(new Intent(getApplicationContext(), FavoriteMovieActivity.class));
+            finish();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

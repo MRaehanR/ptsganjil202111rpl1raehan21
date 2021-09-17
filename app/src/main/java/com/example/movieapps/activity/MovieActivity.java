@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.androidnetworking.AndroidNetworking;
@@ -74,5 +75,11 @@ public class MovieActivity extends AppCompatActivity {
                         System.out.println("Hello2");
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), DashBoardActivity.class));
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -52,6 +53,14 @@ public class FavoriteMovieActivity extends AppCompatActivity {
 
         adapter = new FavoriteMovieAdapter(movielist, this);
         recyclerView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(FavoriteMovieActivity.this, DashBoardActivity.class));
+        finish();
+    }
 }

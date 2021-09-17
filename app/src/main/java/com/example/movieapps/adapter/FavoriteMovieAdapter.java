@@ -107,24 +107,17 @@ public class FavoriteMovieAdapter extends RecyclerView.Adapter<FavoriteMovieAdap
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()){
-                case R.id.option1:
-//                    Toast.makeText(context, positionItem, Toast.LENGTH_SHORT).show();
-                    System.out.println("positionItem"+ positionItem);
-                    Log.d("ini position", String.valueOf(positionItem));
-                    break;
                 case R.id.option2:
                     Toast.makeText(context, "Delete", Toast.LENGTH_SHORT).show();
                     realmHelper.delete(positionItem);
                     break;
             }
-
             notifyDataSetChanged();
             return false;
         }
 
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.add(R.menu.context_menu, R.id.option1, 1, "Edit").setOnMenuItemClickListener(this);
             menu.add(R.menu.context_menu, R.id.option2, 2, "Delete").setOnMenuItemClickListener(this);
         }
     }

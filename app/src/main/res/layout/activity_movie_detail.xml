@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MovieDetailActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/blue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,11 +46,13 @@
 
                 <TextView
                     android:id="@+id/tv_original_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="270dp"
                     android:layout_height="wrap_content"
                     android:text="original_title"
                     android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/gold"
                     />
+
                 <TextView
                     android:id="@+id/tv_realese_date"
                     android:layout_width="wrap_content"
@@ -57,7 +60,7 @@
                     android:layout_marginTop="8dp"
                     android:text="realese_date"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary"
+                    android:textColor="@color/white"
                     />
 
             </LinearLayout>
@@ -67,8 +70,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                app:srcCompat="@drawable/ic_baseline_thumb_up_24"
-                tools:ignore="VectorDrawableCompat" />
+                app:srcCompat="@drawable/ic_baseline_favorite_24"
+                tools:ignore="VectorDrawableCompat"
+                android:backgroundTint="@color/blue_light"
+                />
 
         </RelativeLayout>
 
@@ -82,7 +87,8 @@
             android:paddingRight="10dp"
             android:paddingTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="@color/gold"/>
 
 
         <TextView
@@ -92,7 +98,8 @@
             android:paddingRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
